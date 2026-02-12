@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet JS - Formulaire sécurisé</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="container">
+    <h1>Projet Web (JavaScript)</h1>
+    <p class="subtitle">
+      Validation côté client + interface responsive + expérience utilisateur.
+    </p>
+  </header>
+
+  <main class="container grid">
+    <!-- Carte : Formulaire -->
+    <section class="card">
+      <h2>Formulaire de contact</h2>
+
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="fullName">Nom complet</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Ex: Bara Thiam" />
+          <small class="error" id="errFullName"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ex: bara@email.com" />
+          <small class="error" id="errEmail"></small>
+        </div>
+
+        <div class="field">
+          <label for="phone">Téléphone (optionnel)</label>
+          <input type="text" id="phone" name="phone" placeholder="ex: 4388753421" />
+          <small class="error" id="errPhone"></small>
+        </div>
+
+        <div class="field">
+          <label for="subject">Sujet</label>
+          <select id="subject" name="subject">
+            <option value="">-- Choisir --</option>
+            <option value="stage">Demande de stage</option>
+            <option value="projet">Projet / Collaboration</option>
+            <option value="autre">Autre</option>
+          </select>
+          <small class="error" id="errSubject"></small>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Écris ton message..."></textarea>
+          <div class="hint">
+            <span id="charCount">0</span>/300 caractères
+          </div>
+          <small class="error" id="errMessage"></small>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="btnSend">Envoyer</button>
+          <button type="button" id="btnReset" class="secondary">Réinitialiser</button>
+        </div>
+
+        <div class="success" id="successBox" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <!-- Carte : Aperçu des données -->
+    <section class="card">
+      <h2>Aperçu (sans serveur)</h2>
+      <p class="small">
+      
+      </p>
+
+      <div class="preview" id="previewBox">
+        <p class="muted">Aucun envoi pour le moment.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© 2026 - Projet JavaScript (Validation + Responsive)</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
